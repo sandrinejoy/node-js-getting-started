@@ -2,65 +2,146 @@
 <html>
 <head>
   <% include ../partials/header.ejs %>
+ 
 </head>
 
 <body>
+      <% include ../partials/nav.ejs %>
+      
+    <div  class="shadow rounded border border-secondary  position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+      <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal">Hall of Exams</h1>
+        <p class="lead font-weight-normal">A Complete Platform For  Fair Exams & Proctoring</p>
+        <a class="btn btn-outline-dark" href="#">Get Started</a>
+      </div>
+      <div>
+        <img src="logos/therp.svg" alt="" class="product-device box-shadow d-none d-md-block">
+      </div>
+      <div>
+        <img src="logos/proctored.svg" alt="" class="product-device product-device-2 box-shadow d-none d-md-block">
+      </div>
+    </div>
+    <a name="products"></a>
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 px-md-5">
+      <div style="background: #39B1EF;" class=" mr-md-3 py-3 px-3 pt-md-5 px-md-5 text-center shadow-lg rounded  overflow-hidden">
+        <div class="my-3 p-3">
+          <h2 class="display-5">Therp</h2>
+          <p class="lead">An Online Exam Platform</p>
+        </div>
+        <div style="background:radial-gradient(circle,#fff 20%,transparent );"class=" box-shadow mx-auto rounded-lg py-5">
+          <img src="/logos/therp.svg" alt="" class="align-middle" style="height: 300px;">
+        </div>
+        <div class="my-1 p-2">
+          <a class="btn btn-light btn-lg  mt-4 px-md-5" href="#">Take a Look !</a>
 
-  <% include ../partials/nav.ejs %>
+        </div>
+      </div>
+      <div class="mr-md-3 py-3 px-3 pt-md-5 px-md-5 text-center border shadow-lg overflow-hidden rounded" style="background:#4CEFB5;">
+        <div class="my-3 py-3">
+          <h2 class="display-5">Proctored</h2>
+          <p class="lead">A Complete Proctoring Service</p>
+        </div>
+        <div style="background:radial-gradient(circle,#fff 20%  ,transparent);"class=" box-shadow mx-auto rounded-lg py-5">
+          <img src="/logos/proctored.svg" alt="" class="align-middle" style="height: 300px;">
+          
+        </div>
+        <div class="my-1 p-2">
+          <a class="btn btn-light btn-lg  mt-4 px-md-5" href="#">Take a Look !</a>
+        </div>
+      </div>
+    </div>
+    <a name="features"></a>
+<hr>
+    <!-- Features  -->
+    
+    <div class="feature-1 py-4 py-md-5">
 
-<div class="jumbotron text-center">
-  <div class="container">
-    <a href="/" class="lang-logo">
-      <img src="/lang-logo.png">
-    </a>
-    <h1>Getting Started on Heroku with Node.js</h1>
-    <p>This is a sample Node application deployed to Heroku. It's a reasonably simple app - but a good foundation for understanding how to get the most out of the Heroku platform.</p>
-    <a type="button" class="btn btn-lg btn-default" href="https://devcenter.heroku.com/articles/getting-started-with-nodejs"><span class="glyphicon glyphicon-flash"></span> Getting Started on Heroku with Node.js</a>
-    <a type="button" class="btn btn-lg btn-primary" href="https://github.com/heroku/node-js-getting-started"><span class="glyphicon glyphicon-download"></span> Source on GitHub</a>
-  </div>
-</div>
-<div class="container">
-  <div class="alert alert-info text-center" role="alert">
-    To deploy your own copy, and learn the fundamentals of the Heroku platform, head over to the <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs" class="alert-link">Getting Started on Heroku with Node.js</a> tutorial.
+      <div class="container">
+
+          <div class="row">
+              <div class="feature-intro text-center col-md-10 col-xl-8 mx-md-auto">
+                  <h1 class="feature-title mb-3">Therp</h1>
+                  <p class="lead">A Platform to conduct<strong> <em>Online Examinations</strong></em> in a free and fair Practise where there is no hassle for Teachers or students</p>
+                  <button class="btn btn-lg btn-outline-primary mt-4 px-md-5">Get Started</button>
+              </div>
+          </div>
+
+          <div class="row feature-list mt-5 pt-md-3">
+              <div class="col-md-4">
+                  <div class="feature-box text-center p-3 p-md-4 mx-auto">
+                      <div class="feature-icon mx-auto">
+                        <i class="fas fa-th-list"></i> 
+                      </div>
+                      <h5 class="feature-title mb-3">Fresh & Simple UI</h5>
+                      <p class="text-muted">A well crafted UI for Teacher's Dashboard. Moreover , a simple UI for the Student's Examination Portal</p>
+                  </div>
+              </div>
+              <div class="col-md-4 mt-4 mt-md-0">
+                  <div class="feature-box text-center p-3 p-md-4 mx-auto">
+                      <div class="feature-icon mx-auto">
+                          <i class="fas fa-code"></i>
+                      </div>
+                      <h5 class="feature-title mb-3">Light Weight</h5>
+                      <p class="text-muted">A very light weight Application, which can be loaded on any Server regardless of the Bandwidth Capacity</p>
+                  </div>
+              </div>
+              <div class="col-md-4 mt-4 mt-md-0">
+                  <div class="feature-box text-center p-3 p-md-4 mx-auto">
+                      <div class="feature-icon mx-auto">
+                          <i class="fas fa-bolt"></i>
+                      </div>
+                      <h5 class="feature-title mb-3">ZAP Mode</h5>
+                      <p class="text-muted">ZAP mode enables the Teacher to setup an Exam test in the Quickest and Easiest way Possible</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+
   </div>
   <hr>
-  <div class="row">
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-info-sign"></span> How this sample app works</h3>
-      <ul>
-        <li>This app was deployed to Heroku, either using Git or by using <a href="https://github.com/heroku/node-js-getting-started">Heroku Button</a> on the repository.</li>
+  <div class="feature-1 py-4 py-md-5">
 
-        <li>When Heroku received the source code, it fetched all the dependencies in the <a href="https://github.com/heroku/node-js-getting-started/blob/main/package.json">package.json</a>, creating a deployable slug.</li>
-        <li>The platform then spins up a dyno, a lightweight container that provides an isolated environment in which the slug can be mounted and executed.</li>
-        <li>You can scale your app, manage it, and deploy over <a href="https://addons.heroku.com/">150 add-on services</a>, from the Dashboard or CLI.</li>
-      </ul>
+    <div class="container">
+
+        <div class="row">
+            <div class="feature-intro text-center col-md-10 col-xl-8 mx-md-auto">
+                <h1 class="feature-title mb-3">Proctored</h1>
+                <p class="lead">The most effective Procoring Service Made for Everyone</p>
+                <button class="btn btn-lg btn-outline-primary mt-4 px-md-5">Get Started</button>
+            </div>
+        </div>
+
+        <div class="row feature-list mt-5 pt-md-3">
+            <div class="col-md-4">
+                <div class="feature-box text-center p-3 p-md-4 mx-auto">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h5 class="feature-title mb-3">Real-Time</h5>
+                    <p class="text-muted">A Real-Time Communication enables the Proctor to view the Student's Activity</p>
+                </div>
+            </div>
+            <div class="col-md-4 mt-4 mt-md-0">
+                <div class="feature-box text-center p-3 p-md-4 mx-auto">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h5 class="feature-title mb-3">Smart Logging</h5>
+                    <p class="text-muted">The proctor gets alert when a Student does something uncommon During a Test</p>
+                </div>
+            </div>
+            <div class="col-md-4 mt-4 mt-md-0">
+                <div class="feature-box text-center p-3 p-md-4 mx-auto">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h5 class="feature-title mb-3">Live Chat</h5>
+                    <p class="text-muted">The Proctor and student can chat regarding technical issues , Queries or any Malpractises </p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-link"></span> Next Steps</h3>
-      <ul>
-        <li>If you are following the <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs">Getting Started</a> guide, then please head back to the tutorial and follow the next steps!</li>
-        <li>If you deployed this app by deploying the Heroku Button, then in a command line shell, run:</li>
-        <ul>
-          <li><code>git clone https://github.com/heroku/node-js-getting-started.git</code> - this will create a local copy of the source code for the app</li>
-          <li><code>cd node-js-getting-started</code> - change directory into the local source code repository</li>
-          <li><code>heroku git:remote -a &lt;your-app-name></code> - associate the Heroku app with the repository</li>
-          <li>You'll now be set up to run the app locally, or <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#push-local-changes">deploy changes</a> to Heroku</li>
-        </ul>
-      </ul>
-      <h3><span class="glyphicon glyphicon-link"></span> Helpful Links</h3>
-      <ul>
-        <li><a href="https://www.heroku.com/home">Heroku</a></li>
-        <li><a href="https://devcenter.heroku.com/">Heroku Dev Center</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs">Getting Started on Heroku with Node.js</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/deploying-nodejs">Deploying Node Apps on Heroku</a></li>
-      </ul>
-    </div>
-  </div> <!-- row -->
-   <div class="alert alert-info text-center" role="alert">
-    Please do work through the Getting Started guide, even if you do know how to build such an application.  The guide covers the basics of working with Heroku, and will familiarize you with all the concepts you need in order to build and deploy your own apps.
-  </div>
+
 </div>
-
-
 </body>
 </html>
