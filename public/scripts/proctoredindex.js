@@ -1,10 +1,3 @@
-var HOST = location.origin.replace(/^http/, 'ws')
-var ws = new WebSocket(HOST);
-var el;
-
-ws.onmessage = function (event) {
- console.log('Server time: ' + event.data);
-};
 
 //actual code
 
@@ -26,6 +19,16 @@ signoutbtn.addEventListener('click',(e)=>{
     logout();
     
 });
+function loadroom(x){
+  $.ajax({
+    type: "POST",
+    url: "/myroom",
+    data: { 'code':x },
+    success:function(data){
+      
+    }
+  });
+}
 function confirmDialog(message, onConfirm){
     var fClose = function(){
           modal.modal("hide");
@@ -42,6 +45,9 @@ const myRooms = (rooms) =>{
         const room=e.data()
         if (room.user==userd.email){
         var type = room.public ? "public": "private";
+        const queryString=room.link
+        const roomcode =  queryString.substr(queryString.indexOf("=")+1)  
+console.log( queryString.substr(queryString.indexOf("=")+1));
         const li= `
         <div class="col-md-4">
               <div class="card mb-4 box-shadow">
@@ -58,7 +64,7 @@ const myRooms = (rooms) =>{
                   </p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-warning"><i class="fas fa-door-open"></i> Join</button>
+                      <button type="button" class="btn btn-sm btn-warning"><a href="/myroom?code=${roomcode}" target="_blank"><i class="fas fa-door-open"></i>Join</a></button>
                       <button type="button" class="btn btn-sm btn-dark" value="${e.id}" onclick="deleteRoom(this.value)"><i class="fas fa-trash"></i> Delete</button>
                     </div>
                   </div>
@@ -78,7 +84,6 @@ const copy=(e)=>{
   }
 const typecheck = () =>{
     let x=$('#roomtype').val();
-    console.log(x)
     if(x=="false"){
         $('#emailsform').attr("hidden",false);
     }

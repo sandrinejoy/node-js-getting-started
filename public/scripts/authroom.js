@@ -10,9 +10,7 @@ firebase.auth().onAuthStateChanged(function(user) {
              userd=data.cuser;
             $('#linimg').attr("src",data.cuser.photourl);
             $('#linname').html(data.cuser.name);
-            db.collection('rooms').onSnapshot(rooms=>{
-                myRooms(rooms);
-            });
+          
         }
       });
 
@@ -44,26 +42,4 @@ const logout=()=>{
       alert(error);
        window.location.href = "/proctored"
      });
-}
-const newRoom=(room)=>{
-    db.collection('rooms').add(room)
-    .then((myid)=>{
-        db.collection("rooms")
-        .doc(myid.id)
-        .update(
-            {
-                link: location.origin+'/proctored?room='+myid.id,
-            },
-        );
-        newroomform.reset();
-    });
-}
-const deleteRoom=(id)=>{
-    confirmDialog("Are you sure to Delete this room ?", function(){
-        db.collection("rooms").doc(id).delete().then(function() {
-            $('#deleteToast').toast('show');
-        }).catch(function(error) {
-            console.error("Error removing document: ", error);
-        });
-    });
 }
