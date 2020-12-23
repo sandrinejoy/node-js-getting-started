@@ -111,7 +111,19 @@
   //make auth & firestore refs
   const auth=firebase.auth();
   const db=firebase.firestore();
-
+  var room= '<%- code %>';
+  var docRef = db.collection("rooms").doc(room);
+docRef.get().then(function(doc) {
+if (doc.exists) {
+    $('#nameexam').html(doc.data().name)
+    
+} else {
+    // doc.data() will be undefined in this case
+    console.log("No such document!");
+}
+}).catch(function(error) {
+console.log("Error getting document:", error);
+});
 </script>
 <script src="/scripts/authroom.js"></script>
 </body>

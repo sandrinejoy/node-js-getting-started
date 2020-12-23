@@ -4,6 +4,8 @@
 
 const roomList =document.querySelector('.rooms');
 const signupbtn=document.querySelector('#signup-btn');
+
+const signupbtn1=document.querySelector('#signup-btn1');
 const signoutbtn=document.querySelector('#signout-btn');
 let userd=null;
 const newroombtn=document.querySelector('#newroombtn');
@@ -13,6 +15,12 @@ signupbtn.addEventListener('click',(e)=>{
     e.preventDefault();
     login();
     
+});
+
+signupbtn1.addEventListener('click',(e)=>{
+  e.preventDefault();
+  login();
+  
 });
 signoutbtn.addEventListener('click',(e)=>{
     e.preventDefault();
@@ -41,6 +49,14 @@ function confirmDialog(message, onConfirm){
 }
 const myRooms = (rooms) =>{
     let html='';
+    const infobar=`<div class="container">
+    <div class="row">
+        <div class="feature-intro text-center col-md-10 col-xl-8 mx-md-auto">
+            <h1 class="feature-title mb-3">How to Start ?</h1>
+            <p class="lead">Use <kbd>New Proctor Room</kbd> Button for Creating a Proctored Room</p>
+        </div>
+    </div></div>`;
+    html+=infobar;
     rooms.forEach(e => {
         const room=e.data()
         if (room.user==userd.email){
@@ -64,7 +80,7 @@ console.log( queryString.substr(queryString.indexOf("=")+1));
                   </p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-warning"><a href="/myroom?code=${roomcode}" target="_blank"><i class="fas fa-door-open"></i>Join</a></button>
+                      <button type="button" class="btn btn-sm btn-warning"><a class="btn btn-sm btn-warning" href="/myroom?code=${roomcode}" target="_blank"><i class="fas fa-door-open"></i>Join</a></button>
                       <button type="button" class="btn btn-sm btn-dark" value="${e.id}" onclick="deleteRoom(this.value)"><i class="fas fa-trash"></i> Delete</button>
                     </div>
                   </div>
@@ -75,7 +91,9 @@ console.log( queryString.substr(queryString.indexOf("=")+1));
         html+=li;
 
         }
+       
     });
+    
     roomList.innerHTML=html;
 }
 const copy=(e)=>{
